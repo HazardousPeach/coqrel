@@ -20,6 +20,7 @@ Qed.
 
 Global Instance rel_union_subrel_params:
   Params (@rel_union) 4.
+Defined.
 
 (** Since we're forced to commit to a branch, we can't use [RIntro],
   but can still provide [RExists] instances. *)
@@ -132,6 +133,7 @@ Qed.
 
 Global Instance rel_inter_params:
   Params (@rel_inter) 4.
+Defined.
 
 (** In some cases, the relation in the goal will cause existential
   variables to be instantiated accordingly; for instance, [rstep] run
@@ -267,6 +269,7 @@ Qed.
 
 Global Instance rel_impl_subrel_params:
   Params (@rel_impl) 4.
+Defined.
 
 Lemma rel_impl_rintro {A B} (R1 R2: rel A B) x y:
   RIntro (R1 x y -> R2 x y) (rel_impl R1 R2) x y.
@@ -378,6 +381,7 @@ Qed.
 
 Global Instance rel_compose_params:
   Params (@rel_compose) 4.
+Defined.
 
 Lemma rel_compose_id_left {A B} (R: rel A B):
   eqrel (rel_compose R eq) R.
@@ -455,6 +459,7 @@ Qed.
 
 Global Instance rel_pull_subrel_params:
   Params (@rel_pull) 3.
+Defined.
 
 (** In the restricted case where [f = g], [rel_pull] preserves many
   properties of the underlying relation. *)
@@ -549,6 +554,7 @@ Qed.
 
 Global Instance rel_push_subrel_params:
   Params (@rel_push) 3.
+Defined.
 
 Lemma rel_push_corefl {A B} (f: A -> B) (R: rel A A):
   Coreflexive R ->
@@ -737,6 +743,7 @@ Qed.
 
 Global Instance lsat_subrel_params:
   Params (@lsat) 3.
+Defined.
 
 Definition rsat {A B} (P: B -> Prop): rel A B :=
   fun x y => P y.
@@ -749,6 +756,7 @@ Qed.
 
 Global Instance rsat_subrel_params:
   Params (@rsat) 3.
+Defined.
 
 Inductive psat {A} (I: A -> Prop) (x: A): A -> Prop :=
   psat_intro: I x -> psat I x x.
@@ -762,6 +770,7 @@ Qed.
 
 Global Instance psat_subrel_params:
   Params (@psat) 3.
+Defined.
 
 Lemma psat_corefl {A} (I: A -> Prop):
   Coreflexive (psat I).
@@ -865,6 +874,7 @@ Qed.
 
 Global Instance rel_incr_subrel_params:
   Params (@rel_incr) 4.
+Defined.
 
 (** Note the order of the premises in our intro rule. We want to first
   determine what [w'] should be, then prove [acc w w']. *)
