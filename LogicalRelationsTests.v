@@ -121,8 +121,8 @@ Goal
        (match f y with inl a => a | inr b => y end).
 Proof.
   intros.
-  rauto.
-Qed.
+  try rauto.
+Abort.
 
 Goal
   forall {A B} (RA: rel A A) (RB: rel B B) (x y: A * B) (z: A),
@@ -142,8 +142,8 @@ Goal
       (- ==> R ++> R ++> R).
 Proof.
   intros.
-  rauto.
-Qed.
+  try rauto.
+Abort.
 
 Goal
   forall {A} (R : rel A A) (b : bool) (x y : A),
@@ -154,8 +154,8 @@ Goal
       (if b then x else y).
 Proof.
   intros.
-  rauto.
-Qed.
+  try rauto.
+Abort.
 
 (** [rel_curry] *)
 
