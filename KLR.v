@@ -144,8 +144,11 @@ Section LIFT.
 End LIFT.
 
 Global Instance k_rel_params: Params (@k) 4.
+Defined.
 Global Instance k1_rel_params: Params (@k1) 5.
+Defined.
 Global Instance k2_rel_params: Params (@k2) 6.
+Defined.
 
 Hint Extern 0 (RIntro _ (k _ _) _ _) =>
   eapply k_rintro : typeclass_instances.
@@ -312,7 +315,9 @@ Section MODALITIES.
 End MODALITIES.
 
 Global Instance klr_box_subrel_params: Params (@klr_box) 4.
+Defined.
 Global Instance klr_diam_subrel_params: Params (@klr_diam) 4.
+Defined.
 
 Hint Extern 0 (RIntro _ (klr_box _ _ _) _ _) =>
   eapply klr_box_rintro : typeclass_instances.
@@ -379,6 +384,7 @@ Section UNKRIPKIFY.
 End UNKRIPKIFY.
 
 Global Instance rel_kvd_subrel_params: Params (@rel_kvd) 3.
+Defined.
 
 Hint Extern 0 (RIntro _ (rel_kvd _) _ _) =>
   eapply rel_kvd_rintro : typeclass_instances.
@@ -406,6 +412,7 @@ Qed.
 
 Global Instance klr_pullw_subrel_params:
   Params (@klr_pullw) 5.
+Defined.
 
 Lemma klr_pullw_rintro {W1 W2 A B} (f: W1 -> W2) R w (x:A) (y:B):
   RIntro (R (f w) x y) (klr_pullw f R w) x y.
